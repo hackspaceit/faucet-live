@@ -1,0 +1,38 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "local>celo-org/.github:renovate-config",
+    "local>celo-org/developer-tooling:dt-renovate-base"
+  ],
+  "packageRules": [
+    {
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["patch", "minor"],
+      "groupName": "devDependencies (non-major)"
+    },
+    {
+      "groupName": "celo",
+      "matchPackageNames": ["/@celo/"]
+    },
+    {
+      "groupName": "firebase",
+      "matchPackageNames": ["/firebase/"]
+    },
+    {
+      "groupName": "eslint",
+      "enabled": false,
+      "matchPackageNames": ["/eslint/"]
+    }
+  ],
+  "ignoreDeps": ["web3", "ethers"],
+  "major": {
+    "minimumReleaseAge": "12 days"
+  },
+  "minor": {
+    "minimumReleaseAge": "6 days"
+  },
+  "patch": {
+    "minimumReleaseAge": "4 days"
+  },
+  "schedule": ["on tuesday and thursday", "every weekend"]
+}

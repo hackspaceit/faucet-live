@@ -1,0 +1,29 @@
+{
+  "name": "mono-faucet",
+  "version": "1.0.0",
+  "description": "Repo for faucet UI and firebase functions",
+  "main": "index.js",
+  "repository": "https://github.com/celo-org/faucet.git",
+  "author": "cLabs",
+  "license": "Apache-2.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "yarn --cwd apps/web dev",
+    "build": "yarn workspaces foreach --all --parallel run build",
+    "lint": "yarn --cwd apps/web lint --fix && yarn --cwd apps/firebase lint --fix",
+    "postinstall": "husky install",
+    "prettify": "yarn prettier --write \"apps/**/*.{ts,tsx}\" --ignore-path=./.gitignore"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "husky": "9.1.1",
+    "prettier": "^3.3.3"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "packageManager": "yarn@4.3.1"
+}

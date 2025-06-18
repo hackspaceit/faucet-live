@@ -1,0 +1,57 @@
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro {
+  max-width: 420px;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.label {
+  font-weight: 500;
+  margin: 0.25rem;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+.address {
+  width: 385px;
+  font-size: 0.9rem;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+.address:focus-visible {
+  outline-color: var(--outline-color);
+}
+
+.status {
+  margin-top: 0.67rem;
+  margin-bottom: 1rem;
+}
+
+.button {
+  max-width: fit-content;
+  margin: 1rem;
+}
+
+.githubAuthenticate {
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .address {
+    font-size: 0.85rem;
+    width: 320px;
+    max-width: 90vw;
+  }
+
+  .intro {
+    text-align: center;
+    margin-top: 1.4rem;
+    margin-bottom: 1.4rem;
+  }
+}
